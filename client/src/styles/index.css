@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { 
+    background-color: #ffffff; 
+    color: #111827; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f9fafb; }
+  ::-webkit-scrollbar-thumb { background: #991b1b; border-radius: 3px; }
+}
+
+@layer utilities {
+  /* Luxury Gold Foil Border */
+  .border-gold {
+    border: 1px solid rgba(200, 155, 60, 0.35);
+  }
+  
+  .border-gold-glow {
+    border: 1px solid rgba(200, 155, 60, 0.6);
+    box-shadow: 0 0 20px rgba(200, 155, 60, 0.15);
+  }
+
+  /* Luxury Glassmorphism Card */
+  .glass-luxury {
+    background: rgba(255, 253, 249, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(200, 155, 60, 0.25);
+  }
+
+  /* Dark Glassmorphism Card */
+  .glass-dark {
+    background: rgba(28, 18, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(200, 155, 60, 0.3);
+  }
+
+  /* Hero Gradient Overlay */
+  .hero-overlay-luxury {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 18, 15, 0.85) 0%,
+      rgba(139, 30, 30, 0.70) 50%,
+      rgba(28, 18, 15, 0.95) 100%
+    );
+  }
+
+  /* Shimmer skeleton loader */
+  .shimmer {
+    background: linear-gradient(90deg, #f2ece4 25%, #fbf8f3 50%, #f2ece4 75%);
+    background-size: 800px 100%;
+    animation: shimmer 1.4s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  @keyframes scale-up {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .animate-scale-up {
+    animation: scale-up 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
